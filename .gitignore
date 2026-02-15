@@ -1,0 +1,21 @@
+# 実行ファイル
+*.out
+*.exe
+a.out
+
+# コンパイラ生成ファイル
+*.o
+*.obj
+
+# macOS
+.DS_Store
+
+# IDEファイル
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# テスト用入出力ファイル（必要に応じて調整）
+input.txt
+output.txt
