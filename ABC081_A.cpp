@@ -14,16 +14,18 @@ using namespace std;
 
 int main(){
   int n;
-  cin<<n;  // ❌ cin >> n;
+  cin<<n;
   int count=0;
   while(n){
     for(int i=0;i<3;i++){
-      if((x>>i)&1)==true){  // ❌ xが未定義、nを使うべき
+      
+      if((x>>i)&1)==true){
         ++count;
       }
-      n^^//2ビットずらして消したい  // ❌ 構文エラー
+      n^^//2ビットずらして消したい
     }
   }
+
 }
 */
 
@@ -55,6 +57,53 @@ int main(){
   cout << count << endl;
   return 0;
 }
+
+//解法2
+/*
+
+    // '1'の個数をカウント（文字'1'が何個あるか）
+    int count = 0;
+    for (char c : s) {
+        if (c == '1') {
+            count++;
+        }
+    }
+    std::cout << count << std::endl;
+    return 0;
+}
+
+*/
+
+//解法3
+/*
+#include<iostream>
+#include<string>
+#include<numeric>
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+    cout << accumulate(s.begin(), s.end(), 0) - 3 * '0' << endl;
+      // sの最初から最後までの合計(?)から、 3*'0' を引くと '1' の個数が出てくる...!?
+}
+*/
+
+//解法4
+
+/*
+3 桁の数字を 9 で割ったあまりが求める数と等しいことになります。ただし、9桁以上の時に不適切
+*/
+/*
+#include<iostream>
+using namespace std;
+
+int main() {
+    int a;
+    cin >> a;
+    cout << a % 9 << endl;
+}*/
+
 
 // 【学んだポイント】
 /*
