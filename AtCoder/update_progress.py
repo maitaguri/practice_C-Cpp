@@ -17,8 +17,8 @@ def update_progress():
     
     progress_table = header + "\n" + "\n".join(rows)
     
-    # README.mdを読み込む
-    readme_path = "README.md"
+    # ルートのREADME.mdを読み込む（1つ上のディレクトリ）
+    readme_path = "../README.md"
     if not os.path.exists(readme_path):
         print("ERROR: README.mdが見つかりません")
         return
@@ -27,8 +27,8 @@ def update_progress():
         content = f.read()
     
     # 進捗セクションを更新
-    # "## 進捗" から次の "##" までの間を置き換える
-    pattern = r'(## 進捗\s*\n\n)(.*?)(\n\n凡例：)'
+    # "## 🏆 進捗" から次の "凡例：" までの間を置き換える
+    pattern = r'(## 🏆 進捗\s*\n\n)(.*?)(\n\n凡例：)'
     replacement = r'\1' + progress_table + r'\3'
     
     new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
